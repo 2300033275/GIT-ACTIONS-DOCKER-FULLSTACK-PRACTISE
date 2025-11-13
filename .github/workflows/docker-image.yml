@@ -32,7 +32,7 @@ jobs:
           context: ./springbootexamproject
           file: ./springbootexamproject/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/GITACTION-DOCKER-FULLSTACK-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/git-action-docker-fullstack-backend:latest
 
       # Step 5 — Build & Push Frontend Image
       - name: Build and Push Frontend Image
@@ -41,4 +41,4 @@ jobs:
           context: ./reactexamapp
           file: ./reactexamapp/frontend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/GITACTION-DOCKER-FULLSTACK-frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/git-action-docker-fullstack-frontend:latest
