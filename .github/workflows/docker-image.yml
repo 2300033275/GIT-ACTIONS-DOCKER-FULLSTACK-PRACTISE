@@ -23,7 +23,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_SECRET }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Step 4 — Build & Push Backend Image
       - name: Build and Push Backend Image
@@ -32,7 +32,7 @@ jobs:
           context: ./springbootexamproject
           file: ./springbootexamproject/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/GIT-ACTION-DOCKER-FULLSTACK-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/GITACTION-DOCKER-FULLSTACK-backend:latest
 
       # Step 5 — Build & Push Frontend Image
       - name: Build and Push Frontend Image
@@ -41,4 +41,4 @@ jobs:
           context: ./reactexamapp
           file: ./reactexamapp/frontend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/GIT-ACTION-DOCKER-FULLSTACK-frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/GITACTION-DOCKER-FULLSTACK-frontend:latest
